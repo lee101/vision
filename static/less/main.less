@@ -1,0 +1,313 @@
+@import "lesshat";
+@import "variables";
+@import "mixins";
+@import "defaults";
+@import "lee";
+
+body {
+    background-repeat: repeat;
+    background-position: center 12px;
+    background-color: white;
+    position: relative;
+}
+
+#mainbody {
+    position: relative;
+}
+
+.mm-background {
+    text-align: center;
+}
+
+.mm-header {
+    text-align: left;
+}
+
+.mm-header__nav {
+    display: inline;
+}
+
+.mm-header__link {
+    display: inline-block;
+    height: 103px;
+    vertical-align: top;
+    padding: 41px;
+    .transition(background-color 0.3s, border-color 0.3s;);
+
+    &:focus,
+    &:hover,
+    &.active,
+    {
+        background-color: @gray-lighter;
+    }
+}
+
+.mm-header__profile-link {
+    padding-top: 23px;
+}
+
+.mm-logo {
+    padding: 21px;
+    height: 64px;
+    display: inline-block;
+    text-align: left;
+}
+
+.mm-logo__link {
+    display: inline;
+}
+
+.mm-logo__image {
+    margin: 0 auto;
+    display: inline;
+}
+
+.mm-logo__text {
+    font-family: gesta, sans-serif;
+    font-weight: bold;
+    .font-size(1.6);
+    color: @facebook-blue;
+    display: inline;
+    margin-left: 10px;
+}
+
+.mm-logo__link:focus,
+.mm-logo__link:hover,
+{
+    .mm-logo__text {
+        color: @twitter-blue;
+    }
+    text-decoration: none;
+}
+
+.mm-hero {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: @facebook-blue;
+
+    @media (max-width: @phone-max-width) {
+        padding: 20px;
+    }
+}
+
+.mm-hero--secondary {
+    background-color: @twitter-blue;
+}
+
+.mm-hero--third {
+    background-color: @google-plus-red;
+}
+
+.mm-hero--light {
+    background-color: white;
+}
+
+.mm-marketing-text {
+    -webkit-font-smoothing: subpixel-antialiased;
+    box-sizing: border-box;
+    color: rgb(255, 255, 255);
+    display: block;
+    font-family: gesta, sans-serif;
+    font-weight: normal;
+
+    .font-size(3);
+}
+
+.mm-marketing-text--smaller {
+    .font-size(2.5);
+}
+
+.mm-marketing-text--black {
+    color: rgb(54, 54, 54);
+}
+
+.mm-tc {
+    margin: 20px;
+}
+
+#footerbody {
+    border-top: 10px solid @facebook-blue;
+}
+
+.mm-footer {
+
+}
+
+.mm-footer__heading {
+    .font-size(1.7);
+    text-align: left;
+    border-bottom-color: @lighter-black;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.mm-grid {
+    padding-bottom: 40px;
+}
+
+.mm-grid__section {
+    margin: 20px 0 0 0;
+    text-align: left;
+    display: block;
+    @media (min-width: @small-min-width) {
+        margin: 20px 40px 0px 40px;
+    }
+    @media (min-width: @ipad-portrait-min-width) {
+        margin: 40px 50px 0px 50px;
+    }
+}
+
+.footer__link {
+    display: block;
+}
+
+.footer__social-link-text {
+    //    vertical-align: 50%;
+}
+
+.mm-sharing-btns {
+    .font-size(1.9)
+}
+
+.mm-share-btn {
+    margin-top: 10px;
+    font-size: @base-font-size *2;
+}
+
+.mm-share-btn--twitter {
+    color: @twitter-blue;
+}
+
+.mm-share-btn--google-plus {
+    color: @google-plus-red;
+}
+
+.mm-share-btn--pinterest {
+    color: @pinterest-red;
+}
+
+.mm-share-btn--linked-in {
+    color: @linked-in-blue;
+}
+
+.mm-share-btn--reddit {
+    color: @reddit-blue;
+}
+
+.mm-share-btn--stumbleupon {
+    color: @stumble-upon-orange;
+}
+
+.mm-highlighted-new {
+    text-align: center;
+    border: 3px dashed #008000;
+    border-radius: 13px;
+    display: block;
+
+    .transition(all 0.3s ease-in);
+}
+
+.mm-highlighted-new:hover {
+    border: 3px dashed #ed9c28;
+    background-color: #ed9c28;
+
+    .mm-highlighted-new__text {
+        color: white;
+    }
+}
+
+.mm-highlighted-new__text {
+    text-align: center;
+    font-size: @base-font-size *1.7;
+    font-weight: bold;
+    color: #008000;
+}
+
+.mm-article-theme {
+    background-color: @gray-lighter;
+    text-align: left;
+    font-size: 25px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    p {
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 600px) {
+    .mm-article-theme {
+        font-size: 18px;
+    }
+}
+
+.mm-article-theme-bg {
+    background-color: white;
+    padding-left: 10px;
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.pistachio {
+    background-color: @pistachio;
+}
+
+.morange {
+    background-color: @morange;
+}
+
+.lighter-gray {
+    background-color: @gray-lighter;
+}
+
+.normal-text {
+    color: @lighter-black;
+}
+
+.load-more {
+    width: 300px;
+}
+
+.mm-btn-hg {
+    font-size: 28px;
+}
+
+.icon-container {
+    border-radius: 40px;
+    border: 3px solid @facebook-blue;
+    width: 64px;
+    height: 64px;
+
+    display: none;
+    @media (min-width: @small-min-width) {
+        display: inline-table;
+    }
+}
+
+.icon-container__icon {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    color: @facebook-blue;
+    font-size: 27px;
+}
+
+.icon-container__icon--forward {
+    padding-left: 7px;
+}
+
+.icon-container__icon--globe {
+    font-size: 33px;
+    color: @twitter-blue;
+}
+
+.icon-container--white {
+    border-color: white;
+    .icon-container__icon {
+        color: white;
+    }
+}

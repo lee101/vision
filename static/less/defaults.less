@@ -1,0 +1,57 @@
+body {
+    font-size: @base-font-size;
+}
+
+a {
+    color: @facebook-blue;
+}
+
+a:hover,
+a:focus {
+    color: @twitter-blue;
+    text-decoration: none;
+}
+
+.btn-danger {
+    background-color: @google-plus-red;
+}
+
+.btn-warning {
+    background-color: #ed9c28;
+}
+
+.btn-warning:hover {
+    background-color: #f0ad4e;
+}
+
+.row {
+    margin: 0;
+}
+
+.media-body {
+    text-align: left;
+}
+
+.text-smaller {
+    .font-size-smaller(1)
+}
+
+.modal-body {
+    padding: 0;
+    @media (min-width: @phone-min-width) {
+        padding: 20px;
+    }
+}
+
+.modal-header {
+    border-bottom: none;
+}
+.btn {
+    .transition(all 0.3s ease-in);
+}
+
+.mm-form-control-inline  {
+    display: inline;
+    width: 100px;
+    margin-right: 10px;
+}

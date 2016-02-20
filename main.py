@@ -1,4 +1,5 @@
 # !/usr/bin/env python
+import json
 import logging
 import os
 from google.appengine.api import urlfetch
@@ -6,9 +7,9 @@ from google.appengine.api import urlfetch
 import webapp2
 import jinja2
 
-import lib.cloudstorage as gcs
+import cloudstorage as gcs
 
-
+import computelandmark
 # Retry can help overcome transient urlfetch or GCS issues, such as timeouts.
 my_default_retry_params = gcs.RetryParams(initial_delay=0.2,
                                           max_delay=5.0,
@@ -64,12 +65,13 @@ class BaseHandler(webapp2.RequestHandler):
 
 class GetFromUrlHandler(webapp2.RequestHandler):
     def get(self, url):
-        saveUrl(url, url.hash())
+        name = url.hash()
+        saveUrl(url, name)
+        gcs_uri = 'gs://visiontestimages/'
+        result = computelandmark.identify_landmark(gcs_uri + name)
 
-
-        self.response.headers['Content-Type'] = 'text/xml'
-        template = JINJA_ENVIRONMENT.get_template("/templates/sitemap.xml")
-        self.response.write()
+        self.response.headers['Content-Type'] = 'application/json'
+        self.response.write(json.dumps(result))
 
 
 class MainHandler(BaseHandler):
@@ -90,6 +92,7 @@ class SlashMurdererApp(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
                                   ('/', MainHandler),
+                                  ('/image/(.*)', GetFromUrlHandler),
                                   ('(.*)/$', SlashMurdererApp),
                               ] + [
                                   ('/.*', NotFoundHandler),

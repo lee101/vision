@@ -1,10 +1,4 @@
-class MyClass(object):
-    def __init__(self, a):
-        self.a = a
+from google.appengine.ext import vendor
 
-    def main(self):
-        pass
-
-
-if __name__ == '__main__':
-    MyClass().main()
+# Add any libraries installed in the "lib" folder.
+vendor.add('lib')

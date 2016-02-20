@@ -41,6 +41,8 @@ libraries:
   version: "2.5.2"
 - name: jinja2
   version: "2.6"
+- name: ssl
+  version: latest
 
 instance_class: F1
 automatic_scaling:
@@ -52,3 +54,6 @@ automatic_scaling:
 
 inbound_services:
 - warmup
+
+env_variables:
+  GAE_USE_SOCKETS_HTTPLIB: 'anyvalue'
